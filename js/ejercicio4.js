@@ -12,10 +12,14 @@ class Producto {
     this.nombre = nombre;
     this.precio = precio;
   }
-  imprimeDatos(){
-    document.write(`Código: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio} <br>`)
+  imprimeDatos(array){
+    for (const item in array) {
+      document.write(`${item}`)
+      }
+    }
+ //   document.write(`Código: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio} <br>`)
   }
-}
+
 let leche = new Producto(321654, 'Leche', 230);
 let chocolate = new Producto(642753, 'Chocolate', 290);
 let azucar = new Producto( 974864, 'Azúcar', 170);
