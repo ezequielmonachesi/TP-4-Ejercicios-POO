@@ -9,7 +9,7 @@ class Persona{
     constructor(nombre, edad, DNI, sexo, peso, altura){
         this.nombre=nombre;
         this.edad=edad;
-        this.DNI=DNI;
+        this.dni=DNI;
         this.sexo=sexo;
         this.peso=peso;
         this.altura=altura;
@@ -28,8 +28,21 @@ class Persona{
             document.write(`${this.nombre} pertenece a la Generación Silent Generation <br>`)
         }
     }
+    esMayorDeEdad(){
+        this.edad >= 18 ? document.write(`${this.nombre} es mayor de edad <br>`): document.write(`${this.nombre} es menor de edad <br>`)
+    }
+    mostrarDatos(){
+        document.write(`Nombre: ${this.nombre}, Años: ${this.edad}, DNI: ${this.DNI}, Sexo: ${this.sexo}, Peso: ${this.peso}Kg, Altura: ${this.altura}cm <br>`)
+    }
+    generaDNI(){
+        this.dni = Math.floor(Math.random() * 99999999) + 9999999;
+    }
 }
+
+        
+// let random = Math.floor(Math.random() * 3) + 1;
 
 let juan = new Persona('Juan', 25, 36368963, 'M', 80, 180)
 let jose = new Persona('Jose', 90, 567890, 'M', 50, 160)
 let damian = new Persona('Damian', 50, 17654987, 'M', 70, 155)
+let emilse = new Persona('Emilse', 10, 40678234, 'F', 30, 120)
