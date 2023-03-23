@@ -12,13 +12,11 @@ class Producto {
     this.nombre = nombre;
     this.precio = precio;
   }
-  imprimeDatos(array){
-    for (const item in array) {
-      document.write(`${item}`)
-      }
-    }
- //   document.write(`Código: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio} <br>`)
+  imprimeDatos(){
+    document.write(`Código: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio} <br>`)
+ //   
   }
+}
 
 let leche = new Producto(321654, 'Leche', 230);
 let chocolate = new Producto(642753, 'Chocolate', 290);
@@ -27,4 +25,10 @@ let productos = [];
 productos.push(leche);
 productos.push(chocolate);
 productos.push(azucar);
+
+for (const p in productos) {
+  document.write(`${productos[p].imprimeDatos()}`)
+  }
+
+
 
