@@ -26,7 +26,7 @@ productos.push(leche);
 productos.push(chocolate);
 productos.push(azucar);
 
-for (const p in productos) {
+for (let p in productos) {
   document.write(`${productos[p].imprimeDatos()}`)
   }
 
