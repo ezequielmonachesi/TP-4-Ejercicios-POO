@@ -49,7 +49,7 @@ class Agenda {
     }
   }
   eliminarContacto(contacto) {
-    let indice = this.#array.indexOf(contacto);
+    let indice = this.#array.map(i=>i.nombre).indexOf(contacto.nombre);
     if (indice > -1 || undefined) {
       this.#array.splice(indice, 1);
       document.write(`Se borró ${contacto.nombre} de la agenda <br>`);
@@ -100,25 +100,15 @@ class Contacto {
   set telefono(nuevoTelefono) {
     this.#telefono = nuevoTelefono;
   }
-}
-/* 
-let juan = new Contacto('Juan', 3816234789)
-let daniel = new Contacto('Daniel', 3816234789)
-let jose = new Contacto('José', 3876345123) */
+}   
+
 let contacto;
 let contactos = [];
 let agenda = new Agenda(contactos);
 
-function crearContacto() {
-  let nombre = prompt("Ingrese el nombre por favor");
-  let telefono = parseInt(
-    prompt("Ingrese el número del teléfono del contacto")
-  );
-  return;
-}
-
 let opcion;
-let confirmar;
+let confirmar; 
+
 do {
   opcion = parseInt(
     prompt(
