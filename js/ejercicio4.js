@@ -7,13 +7,34 @@ de los tres objetos instanciados.
  */
 
 class Producto {
+  #codigo
+  #nombre
+  #precio
   constructor(codigo, nombre, precio) {
-    this.codigo = codigo;
-    this.nombre = nombre;
-    this.precio = precio;
+    this.#codigo = codigo;
+    this.#nombre = nombre;
+    this.#precio = precio;
+  }
+  get codigo(){
+    return this.#codigo;
+  }
+  set codigo(nuevoCodigo){
+    this.#codigo=nuevoCodigo;
+  }
+  get precio(){
+    return this.#precio;
+  }
+  set precio(nuevoPrecio){
+    this.#precio=nuevoPrecio;
+  }
+  get nombre(){
+    return this.#nombre;
+  }
+  set nombre(nuevoNombre){
+    this.#nombre=nuevoNombre;
   }
   imprimeDatos(){
-    document.write(`Código: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio} <br>`)
+    document.write(`Código: ${this.#codigo}, Nombre: ${this.#nombre}, Precio: ${this.#precio} <br>`)
  //   
   }
 }
@@ -21,14 +42,9 @@ class Producto {
 let leche = new Producto(321654, 'Leche', 230);
 let chocolate = new Producto(642753, 'Chocolate', 290);
 let azucar = new Producto( 974864, 'Azúcar', 170);
-let productos = [];
-productos.push(leche);
-productos.push(chocolate);
-productos.push(azucar);
+let productos = [leche, chocolate, azucar];
 
 for (let p in productos) {
-  document.write(`${productos[p].imprimeDatos()}`)
-  }
-
-
+  productos[p].imprimeDatos()
+  };
 
