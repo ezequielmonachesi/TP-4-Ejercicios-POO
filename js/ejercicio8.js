@@ -31,4 +31,26 @@ class Persona {
   set profesion(nuevaProfesion) {
     this.#profesion = nuevaProfesion;
   }
+  saludar() {
+    console.log(`Hola`);
+  }
+  despedirse() {
+    console.log(`Adiós`);
+  }
 }
+
+class PersonaDniGenero extends Persona {
+    #genero
+    #dni
+  constructor(nombre, edad, profesion, genero, dni) {
+    super(nombre, edad, profesion);
+    this.#genero = genero;
+    this.#dni = dni;
+  }
+}
+
+let juan = new PersonaDniGenero("Juan", 29, "Plomero","Masculino", 45678432);
+let daiana = new PersonaDniGenero("Sol", 31, "Profesora", "Femenino", 34567123)
+
+juan.saludar()
+daiana.despedirse()
